@@ -4,7 +4,7 @@ import MovieCard from './components/MovieCard';
 import SearchIcon from './search.svg';
 import './App.css';
 
-const API_URL = 'http://www.omdbapi.com?apikey=ec0d4b91';
+const API_URL = 'https://www.omdbapi.com?apikey=ec0d4b91';
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -41,7 +41,7 @@ const App = () => {
       {movies?.length > 0 ? (
         <div className='container'>
           {movies.map((movie) => (
-            <MovieCard movie={movie} />
+            <MovieCard key={movie.imdbID} movie={movie} />
           ))}
         </div>
       ) : (
